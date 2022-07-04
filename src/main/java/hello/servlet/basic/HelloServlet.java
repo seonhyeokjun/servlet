@@ -14,5 +14,12 @@ public class HelloServlet extends HttpServlet {
         System.out.println("HelloServlet.service");
         System.out.println("req = " + req);
         System.out.println("resp = " + resp);
+
+        String username = req.getParameter("username");
+        System.out.println("username = " + username);
+
+        resp.setContentType("text/plain");
+        resp.setCharacterEncoding("utf-8");
+        resp.getWriter().write("hello " + username);
     }
 }
